@@ -1,0 +1,165 @@
+.canvas
+{
+	width: 100vw;
+	height: 100vh;
+	background-color: #111111;
+}
+@keyframes up_mouth_leps_eat
+{
+	0%
+	{
+		transform:  rotateZ(-90deg);
+	}
+
+	25%
+	{
+		transform:  rotateZ(-45deg);
+
+	}
+	50%
+	{
+		transform:  rotateZ(-90deg);
+	}
+
+	75%
+	{
+		transform:  rotateZ(-45deg);
+
+	}
+}
+
+@keyframes down_mouth_leps_eat
+{
+	0%
+	{
+		transform:  rotateZ(90deg);
+	}
+
+	25%
+	{
+		transform:  rotateZ(45deg);
+
+	}
+
+	50%
+	{
+		transform:  rotateZ(90deg);
+	}
+
+	75%
+	{
+		transform:  rotateZ(45deg);
+
+	}
+}
+
+@keyframes go
+{
+	0%
+	{
+		transform: translateX(0);
+	}
+
+	100%
+	{
+		transform: translateX(90vw);
+	}
+}
+/*
+.pacman:hover .mouth__up
+{
+	animation: up_mouth_leps_eat 0.9s ease-in infinite ;
+}
+
+.pacman:hover .mouth__down
+{
+	animation: down_mouth_leps_eat 0.9s ease-in infinite;
+}*/
+/*body*/
+.pacman
+{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-color: transparent;
+	top: 50px;
+	left: 50px;
+	position: relative;
+	overflow: hidden;
+	animation: go 3s ease-in infinite;
+}
+.pacman::before
+{
+	width: 100px;
+	height: 200px;
+	border-radius: 50% 0 0 50%;
+	background-color: #ffff00;
+	content: "";
+	display: block;
+	position: relative;
+	/*overflow: hidden;*/
+}
+
+/*eye*/
+.mouth__up::before
+{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	content: "";
+	display: block;
+	background-color: #000000;
+	border-radius: 50%;
+	left: 20%;
+	top: 60%;
+
+}
+
+/*mouth*/
+.pacman .mouth
+{
+	position: absolute;
+	background-color: #111111;
+	width: 102px;
+	height: 100px;
+	top: 100px;
+	left: 100px;
+	transform:  rotateZ(-45deg);
+	/*transition: transform 5s;*/
+	perspective: 100px;
+	transform-origin: top left;
+
+}
+
+.pacman .mouth__up
+{
+	position: absolute;
+	background-color: #ffff00;
+	width: 100px;
+	height: 100px;
+	/*top: 100px;*/
+	/*left: 100px;*/
+	transform:  rotateZ(-90deg);
+	border-left: 2px solid black;
+	perspective: 100px;
+	transform-origin: top left;
+	animation: up_mouth_leps_eat 0.9s ease-in infinite ;
+
+}
+
+.pacman .mouth__down
+{
+	position: absolute;
+	border-top: 2px solid black;
+	background-color: #ffff00;
+	width: 100px;
+	height: 100px;
+	/*top: 100px;*/
+	/*left: 100px;*/
+	transform:  rotateZ(90deg);
+	perspective: 100px;
+	transform-origin: top left;
+	animation: down_mouth_leps_eat 0.9s ease-in infinite;
+
+}
+
